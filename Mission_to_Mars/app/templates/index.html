@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mission to Mars</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container">
+
+  <!-- Jumbotron, NASA Mars News -->
+  <div class="container-fluid">
+    <div class="jumbotron text-center">
+      <h1>Mission to Mars</h1>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button" style="background-color: rgb(72, 19, 218);"><b>Scrape New Data</b></a></p>
+    </div>
+        
+    <h3><b>Latest Mars News</b></h3>
+    <h4><b>{{data['Article Title']}}</b></h4>
+    <h5>{{data['Article Desc']}}</h5>
+    <br>
+
+        
+    <!-- Featured Image + Twitter Weather + Profile Table -->
+    <div class="container-fluid">
+          
+      <div class="col-lg-8">
+        <h3><b>Featured Mars Image</b></h3>
+        <img src="{{data['JPL Image']}}" alt="Featured Imgage" class="img-thumbnail float-left w-50 h-50">
+      </div> 
+          
+      <div class="col-lg-4">
+        <h4><b>Current Weather on Mars</b></h4>
+        <p>{{data["Mars Weather"]}}</p>
+        <br>
+        <h4><b>Mars Facts</b></h4>
+        <h5>{{data['Mars Facts'] | safe}}</h5>
+      </div>
+    </div>
+    <br>
+<!-- Hemisphere Images -->
+      <!-- Container below NOT fluid in order to place images center of page without having to specify -->
+      <div class="container text-center">
+        <h3 class="text-center"><b>Mars Hemispheres</b></h3>
+        <hr>
+        
+        <!-- Hemispheres Images One & Two -->
+        
+        <div class="row">
+          <!-- First column -->
+          <div class="col-lg-6">
+            <!-- Comment applies to all four images: Need the style specification, otherwise images large & overlap -->
+            <img class="card-img-top float-right" style="width: 100%; height: 100%;" src="{{data['Hemi One Image']}}" alt="Hemi_One_Image">
+            <h4><b>{{data['Hemi One Title']}}</b></h4>
+          </div>
+          
+          <!-- Second column -->
+          <div class="col-lg-6">
+            <img class="card-img-top float-right" style="width: 100%; height: 100%;" src="{{data['Hemi Two Image']}}" alt="Hemi_Two_Image">
+            <h4><b>{{data['Hemi Two Title']}}</b></h4>
+          </div>
+        </div>
+        
+        <!-- Hemispheres Images Three & Four -->
+        <div class="row">
+          <!-- First column -->
+          <div class="col-lg-6">
+            <img class="card-img-top float-right" style="width: 100%; height: 100%;" src="{{data['Hemi Three Image']}}" alt="Hemi_Three_Image">
+            <h4><b>{{data['Hemi Three Title']}}</b></h4>
+          </div>
+          
+          <!-- Second column -->
+          <div class="col-lg-6">
+            <img class="card-img-top float-right" style="width: 100%; height: 100%;" src="{{data['Hemi Four Image']}}" alt="Hemi_Four_Image">
+            <h4><b>{{data['Hemi Four Title']}}</b></h4>
+          </div>
+        </div>
+
+      </div>
+          
+    </div>
+</body>
+</html>   
+
+
+
+
+
+      
+
+        
+      </div>
+    </div>
+    <br>
+</body>
+
+</html>
+
